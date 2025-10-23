@@ -23,8 +23,7 @@ export default function Home() {
   const shareText = `私にとってのリライブパワーリストバンドは「${answer}」！
 
 新技術 #リライブエンジン 搭載の #リライブパワーリストバンド １万個無料配布プロジェクト実施中！
-詳細・ご応募はこちらから👇
-https://x.gd/HapjS
+詳細・ご応募はこちらから👉　https://x.gd/HapjS
 #みんなでエンジン始動 #その動きエンジンがかかる`;
   // XシェアではURLを含めない（shareTextに既に含まれているため）
   
