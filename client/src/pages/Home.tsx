@@ -20,11 +20,16 @@ export default function Home() {
     }
   }, []);
 
-  const shareText = `私にとってのリライブパワーリストバンドは${answer}！ #その動きエンジンがかかる`;
-  const shareUrl = "https://shinken.biz/lp/relive_engine_project/?_gl=1*1e9dpar*_gcl_au*ODEzMDA1OTAyLjE3NTQwMzI0NDg.*_ga*MTQ4NjI5OTMzMS4xNzU0MDMyNDQ5*_ga_27X2KK6FBV*czE3NTg3MDA4MzkkbzkkZzEkdDE3NTg3MDA4MzkkajYwJGwwJGgw";
+  const shareText = `私にとってのリライブパワーリストバンドは「${answer}」！
+
+新技術#リライブエンジン 搭載の#リライブパワーリストバンド １万個無料配布プロジェクト実施中！
+詳細・ご応募はこちらから
+https://shinken.biz/lp/relive_engine_project/?_gl=1*1e9dpar*_gcl_au*ODEzMDA1OTAyLjE3NTQwMzI0NDg.*_ga*MTQ4NjI5OTMxMS4xNzU0MDMyNDQ5*_ga_27X2KK6FBV*czE3NTg3MDA4MzkkbzkkZzEkdDE3NTg3MDA4MzkkajYwJGwwJGgw
+#みんなでエンジン始動 #その動きエンジンがかかる`;
+  // XシェアではURLを含めない（shareTextに既に含まれているため）
   
-  // Xシェアリンク生成
-  const xShareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+  // Xシェアリンク生成（URLはshareTextに含まれているため、url パラメータは不要）
+  const xShareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   const handleCopyToClipboard = async () => {
     try {
@@ -69,7 +74,7 @@ export default function Home() {
           {/* シェア文言プレビュー */}
           <div className="bg-gray-50 p-4 rounded-lg mb-8">
             <p className="text-sm text-gray-600 mb-2">シェア文言：</p>
-            <p className="text-gray-800 font-medium">
+            <p className="text-gray-800 font-medium whitespace-pre-wrap break-words">
               {shareText}
             </p>
           </div>
@@ -90,7 +95,7 @@ export default function Home() {
               variant="outline"
               className="w-full py-3 rounded-lg font-semibold"
             >
-              {copied ? "✓ コピーしました" : "テキストをコピー"}
+              {copied ? "✓ コピーしました" : "Instagram投稿用テキストをコピー"}
             </Button>
           </div>
 
